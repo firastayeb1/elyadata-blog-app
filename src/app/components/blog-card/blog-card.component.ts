@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Blog } from "../../modules/blog";
+import { BlogCard, BlogToBlogCard } from "./module-view/blog-card-module";
 
 @Component({
   selector: 'app-blog-card',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogCardComponent implements OnInit {
 
+  @Input()
+  blog: Blog | undefined;
+
+  blogCard: BlogCard | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    this.blogCard = BlogToBlogCard(this.blog);
   }
 
 }

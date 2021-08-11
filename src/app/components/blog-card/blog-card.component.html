@@ -1,1 +1,9 @@
-<p>blog-card works!</p>
+<div class="card blog-card">
+    <img class="card-img-top" [src]="blogCard?.img?blogCard?.img:'../../../assets/images/blog.png'" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{blogCard?.title}}</h5>
+      <p class="card-subtitle">{{blogCard?.author}}</p>
+      <p class="card-text">{{blogCard?.content}}</p>
+      <a [routerLink]="['/blog/'+blogCard?.id]" class="btn btn-primary">Read more</a>
+    </div>
+  </div>
